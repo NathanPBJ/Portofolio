@@ -45,7 +45,7 @@ const Preloader = () => {
     return (
         <div className={`preloader-container ${isFinished ? 'slide-up' : ''}`}>
             <div className="preloader-content">
-                <h2 className="preloader-logo text-gradient">C:\Users\Nathan</h2>
+                <h2 className="preloader-logo text-gradient">C:\Nathan</h2>
             </div>
             <div className="preloader-bar-container">
                 <div className="preloader-bar" style={{ width: `${progress}%` }}></div>
