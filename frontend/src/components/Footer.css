@@ -15,10 +15,11 @@
 }
 
 .footer-logo {
-    font-size: clamp(1.45rem, 4vw, 2.2rem);
-    font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: var(--font-heading);
     font-weight: 700;
-    letter-spacing: 0;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
     margin-bottom: 2px;
 }
 
