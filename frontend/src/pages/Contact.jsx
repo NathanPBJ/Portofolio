@@ -25,7 +25,7 @@ const Contact = () => {
             <div className="contact-content">
                 <div className="contact-info">
                     <div className="contact-card glass-card">
-                        <button className="easter-egg-btn" onClick={handleWave} aria-label="Say Hi">Hi there!</button>
+                        <button className="easter-egg-btn" onClick={handleWave} aria-label="Say Hi">👋 Hi there!</button>
                         <h3>Contact Information</h3>
                         <p className="contact-desc">Feel free to reach out through any of these platforms.</p>
 
@@ -97,7 +97,7 @@ const Contact = () => {
 
             {showWave && createPortal(
                 <div className="giant-wave-overlay" onClick={() => setShowWave(false)}>
-                    <div className="giant-wave-emoji">Hi</div>
+                    <div className="giant-wave-emoji">👋</div>
                 </div>,
                 document.body
             )}
