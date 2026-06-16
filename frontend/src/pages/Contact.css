@@ -164,6 +164,7 @@
 
 .pitch-icon {
     font-size: 2rem;
+    color: var(--color-accent-light);
     background: rgba(255, 255, 255, 0.05);
     padding: 12px;
     border-radius: 12px;
@@ -171,6 +172,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.pitch-icon svg {
+    width: 1em;
+    height: 1em;
 }
 
 .pitch-item h4 {
@@ -209,5 +215,100 @@
 @media (max-width: 1024px) {
     .contact-content {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-page {
+        padding-top: 118px;
+    }
+
+    .contact-content {
+        gap: 22px;
+    }
+
+    .contact-card,
+    .pitch-container {
+        padding: 24px 20px;
+    }
+
+    .contact-card h3,
+    .pitch-container h3 {
+        font-size: 1.35rem;
+    }
+
+    .contact-desc {
+        margin-bottom: 24px;
+    }
+
+    .contact-methods {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .contact-method-link {
+        gap: 12px;
+        padding: 14px;
+        font-size: 0.92rem;
+    }
+
+    .contact-method-link span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-method-link:hover {
+        transform: none;
+    }
+
+    .availability-banner {
+        align-items: flex-start;
+        padding: 14px;
+        font-size: 0.92rem;
+    }
+
+    .pitch-container {
+        gap: 24px;
+    }
+
+    .pitch-content {
+        gap: 20px;
+    }
+
+    .pitch-item {
+        gap: 14px;
+    }
+
+    .pitch-icon {
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        font-size: 1.35rem;
+    }
+
+    .pitch-item h4 {
+        font-size: 1.05rem;
+    }
+
+    .pitch-item p {
+        font-size: 0.9rem;
+    }
+
+    .download-btn {
+        padding: 15px;
+        font-size: 0.98rem;
+    }
+
+    .easter-egg-btn {
+        top: 16px;
+        right: 16px;
+        opacity: 1;
+    }
+
+    .giant-wave-emoji {
+        font-size: 4rem;
+        font-family: var(--font-heading);
+        color: var(--color-accent-light);
     }
 }

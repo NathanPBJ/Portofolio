@@ -29,7 +29,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-container">
                 <Link to="/" className="nav-logo" onClick={scrollToTop}>
-                    Portfolio.
+                    C:\Users\Nathan
                 </Link>
 
                 <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>

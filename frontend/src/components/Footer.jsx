@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="container footer-container">
                 <div className="footer-left">
-                    <h3 className="footer-logo text-gradient">Portfolio.</h3>
+                    <h3 className="footer-logo text-gradient">C:\Users\Nathan</h3>
                     <p className="footer-tagline">If it rusts, it can never be trusted.</p>
                 </div>
                 

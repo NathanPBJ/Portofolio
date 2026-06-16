@@ -238,10 +238,21 @@
 }
 
 @media (max-width: 900px) {
+    .home {
+        padding-top: 84px;
+    }
+
+    .section {
+        padding: 76px 0;
+    }
+
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        margin-top: 40px;
+        justify-content: center;
+        min-height: auto;
+        margin-top: 18px;
+        gap: 32px;
     }
     
     .hero-content {
@@ -257,5 +268,109 @@
         grid-template-columns: 1fr;
         gap: 32px;
         padding: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        gap: 24px;
+    }
+
+    .availability-badge {
+        max-width: 100%;
+        justify-content: center;
+        padding: 6px 12px;
+        font-size: 0.78rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.55rem, 8vw, 2.15rem);
+    }
+
+    .typewriter-text {
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        border-right-width: 3px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        line-height: 1.45;
+    }
+
+    .hero-bio {
+        font-size: 0.98rem;
+        margin-bottom: 28px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 13px 18px;
+    }
+
+    .hero-image-wrapper {
+        justify-content: center;
+    }
+
+    .hero-image-placeholder {
+        width: min(58vw, 220px);
+        height: min(58vw, 220px);
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 28px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .skill-card {
+        padding: 18px 12px;
+        gap: 10px;
+        min-height: 126px;
+    }
+
+    .skill-icon {
+        font-size: 2.25rem;
+    }
+
+    .skill-name {
+        font-size: 0.94rem;
+    }
+
+    .section-header {
+        display: grid;
+        gap: 8px;
+        justify-items: center;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stats-grid {
+        padding: 26px 18px;
+        gap: 24px;
+        border-radius: var(--border-radius-md);
+    }
+
+    .stat-number {
+        font-size: 2.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
     }
 }

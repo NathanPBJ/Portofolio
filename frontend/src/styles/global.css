@@ -71,7 +71,7 @@ button:focus-visible, a:focus-visible {
 }
 
 .page-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.35rem, 8vw, 3.5rem);
     margin-bottom: 16px;
     line-height: 1.1;
 }
@@ -117,4 +117,23 @@ button:focus-visible, a:focus-visible {
 
 .animate-floating {
     animation: floating 4s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .container {
+        padding-inline: 18px;
+    }
+
+    .page-header {
+        margin-bottom: 36px;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
 }

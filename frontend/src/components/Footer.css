@@ -15,9 +15,10 @@
 }
 
 .footer-logo {
-    font-size: 2.2rem;
-    font-family: var(--font-heading);
+    font-size: clamp(1.45rem, 4vw, 2.2rem);
+    font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
     font-weight: 700;
+    letter-spacing: 0;
     margin-bottom: 2px;
 }
 
@@ -65,8 +66,22 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding: 44px 0 20px;
+        margin-top: 56px;
+    }
+
     .footer-container {
         flex-direction: column;
         text-align: center;
+        gap: 22px;
+    }
+
+    .footer-tagline {
+        font-size: 0.95rem;
+    }
+
+    .social-icons {
+        justify-content: center;
     }
 }
