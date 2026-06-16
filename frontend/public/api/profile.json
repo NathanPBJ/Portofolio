@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "data": {
+    "name": "Nathan Abigail Rahman",
+    "title": "Undergraduate Informatics Student at UPN \"Veteran\" Jakarta",
+    "bio": "Mahasiswa S1 Informatika di Universitas Pembangunan Nasional \"Veteran\" Jakarta angkatan 2024. Sangat antusias mempelajari teknologi baru, mengeksplorasi dunia software engineering, dan memanfaatkan AI untuk memecahkan masalah kompleks.",
+    "avatar": "/avatar.jpg",
+    "email": "nathanabigailr@gmail.com",
+    "location": "Jakarta, Indonesia",
+    "skills": [
+      "Go",
+      "React",
+      "Vite",
+      "JavaScript",
+      "HTML/CSS",
+      "MySQL",
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "Unity",
+      "Android Studio"
+    ],
+    "social_links": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/NathanPBJ",
+        "icon": "github"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/nathan-abigail-r-102090310/",
+        "icon": "linkedin"
+      }
+    ]
+  },
+  "message": "OK"
+}

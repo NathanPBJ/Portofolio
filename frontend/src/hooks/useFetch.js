@@ -1,5 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 
+const getRequestUrl = (url) => {
+    if (!import.meta.env.PROD || !url.startsWith('/api/')) {
+        return url;
+    }
+
+    const resource = url.replace('/api/', '');
+    return `${import.meta.env.BASE_URL}api/${resource}.json`;
+};
+
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -8,7 +17,7 @@ const useFetch = (url) => {
     const fetchData = useCallback(async () => {
         setLoading(true);
         try {
-            const response = await fetch(url);
+            const response = await fetch(getRequestUrl(url));
             if (!response.ok) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

@@ -10,7 +10,7 @@
 body {
     font-family: var(--font-primary);
     background-color: var(--color-bg-primary);
-    background-image: linear-gradient(rgba(18, 28, 21, 0.85), rgba(18, 28, 21, 0.95)), url('/Background.png');
+    background-image: linear-gradient(rgba(18, 28, 21, 0.85), rgba(18, 28, 21, 0.95));
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;

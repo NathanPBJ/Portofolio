@@ -1,11 +1,19 @@
 import './ProjectCard.css';
 
+const getImageUrl = (imageUrl) => {
+    if (!imageUrl || !imageUrl.startsWith('/')) {
+        return imageUrl;
+    }
+
+    return `${import.meta.env.BASE_URL}${imageUrl.slice(1)}`;
+};
+
 const ProjectCard = ({ project }) => {
     return (
         <div className="project-card glass-card animate-fade-in">
             <div className={`project-image-container ${!project.image_url ? 'no-image' : ''}`}>
                 {project.image_url ? (
-                    <img src={project.image_url} alt={project.title} className="project-image" />
+                    <img src={getImageUrl(project.image_url)} alt={project.title} className="project-image" />
                 ) : (
                     <div className="project-image-fallback">
                         <span className="project-initials">{project.title.substring(0, 2).toUpperCase()}</span>

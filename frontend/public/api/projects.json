@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "title": "Sistem Kepegawaian & Absensi - Yayasan Satwa Lestari",
+      "description": "Aplikasi manajemen kepegawaian dan absensi berbasis microservices.",
+      "long_description": "Sistem ini dibangun menggunakan arsitektur microservices yang mencakup API Gateway (Node.js/Express), Auth Service dengan Google OAuth, Employee Service (PHP Laravel), dan Attendance Service (Node.js). Fitur utamanya mencakup manajemen data pegawai dengan riwayat jabatan terintegrasi, sistem absensi dengan perhitungan poin kehadiran (gamifikasi sederhana), serta ekspor laporan rekapitulasi absensi otomatis ke format Word (.docx). Seluruh layanan diisolasi dan dijalankan menggunakan Docker dan Docker Compose.",
+      "tech_stack": [
+        "Node.js",
+        "Express",
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "Docker"
+      ],
+      "github_url": "https://github.com/NathanPBJ/uts-pplos-a-2410511036",
+      "demo_url": "https://youtu.be/KOFXuiQl0m8",
+      "image_url": "/microservices-cover.png",
+      "featured": true,
+      "year": 2024
+    },
+    {
+      "id": 2,
+      "title": "WisataKita App",
+      "description": "Aplikasi Android native untuk mengeksplorasi destinasi wisata dengan fitur galeri dan pemutar musik latar.",
+      "long_description": "WisataKita adalah aplikasi Android native yang dirancang sebagai panduan pariwisata virtual. Aplikasi ini dilengkapi dengan fitur autentikasi pengguna (Login/Register), pengaturan profil, serta daftar destinasi wisata lengkap dengan detailnya. Selain itu, terdapat fitur galeri foto, album, dan pemutar musik latar (MusicService) untuk memberikan pengalaman yang interaktif. Dibangun dengan Kotlin, UI berbasis XML, serta menggunakan library Glide untuk pemuatan gambar secara dinamis.",
+      "tech_stack": [
+        "Kotlin",
+        "Android Studio",
+        "XML",
+        "Glide",
+        "RecyclerView"
+      ],
+      "github_url": "https://github.com/NathanPBJ/WisataKitaApp",
+      "demo_url": "",
+      "image_url": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&q=80",
+      "featured": true,
+      "year": 2026
+    },
+    {
+      "id": 3,
+      "title": "Pixel Heroes",
+      "description": "Game platformer 2D bergaya klasik seperti Mario Bros yang dibuat dengan Java dan JavaFX.",
+      "long_description": "Game platformer 2D yang menempatkan Anda sebagai pahlawan untuk menyelamatkan kerajaan dari Shadow Lord yang mencuri Crystal of Light. Game ini memiliki 3 level dengan kesulitan yang terus meningkat, musuh AI yang berpatroli, sistem koin, fisika platformer realistis (gravitasi, lompat, collision), serta sistem storyline interaktif.",
+      "tech_stack": [
+        "Java",
+        "JavaFX",
+        "Maven"
+      ],
+      "github_url": "https://github.com/Hesham-prog/pixel-heroes",
+      "demo_url": "",
+      "image_url": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+      "featured": true,
+      "year": 2024
+    }
+  ],
+  "message": "OK"
+}
