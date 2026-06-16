@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"portfolio-backend/handlers"
 
 	"github.com/gin-contrib/cors"
@@ -22,16 +23,23 @@ func main() {
 	router.Use(cors.New(config))
 
 	// API Routes
-	api := router.Group("/api")
-	{
-		api.GET("/health", handlers.HealthCheck)
-		api.GET("/profile", handlers.GetProfile)
-		api.GET("/projects", handlers.GetProjects)
-		api.GET("/projects/:id", handlers.GetProjectByID)
+	registerAPIRoutes(router.Group("/api"))
+	registerAPIRoutes(router.Group("/_/backend/api"))
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
 	}
 
-	log.Println("Starting server on :8080")
-	if err := router.Run(":8080"); err != nil {
+	log.Printf("Starting server on :%s", port)
+	if err := router.Run(":" + port); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
+}
+
+func registerAPIRoutes(api *gin.RouterGroup) {
+	api.GET("/health", handlers.HealthCheck)
+	api.GET("/profile", handlers.GetProfile)
+	api.GET("/projects", handlers.GetProjects)
+	api.GET("/projects/:id", handlers.GetProjectByID)
 }

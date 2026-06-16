@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const getRequestUrl = (url) => {
-    if (!import.meta.env.PROD || !url.startsWith('/api/')) {
+    if (!import.meta.env.PROD || !url.startsWith('/api/') || import.meta.env.BASE_URL === '/') {
         return url;
     }
 

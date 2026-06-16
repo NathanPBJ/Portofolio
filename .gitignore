@@ -19,6 +19,7 @@ lerna-debug.log*
 *.local
 .env
 .env.*
+.vercel/
 
 # Editor and OS files
 .vscode/*
