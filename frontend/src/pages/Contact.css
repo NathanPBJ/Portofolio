@@ -1,0 +1,213 @@
+.contact-page {
+    padding-top: 160px; /* Increased from 120px for consistency */
+    min-height: 80vh;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.contact-card {
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Interactive easter egg button */
+.easter-egg-btn {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    background: var(--color-accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.contact-card:hover .easter-egg-btn {
+    top: 20px;
+    opacity: 1;
+}
+
+.easter-egg-btn:active {
+    transform: scale(0.9);
+}
+
+/* Giant Wave Overlay */
+.giant-wave-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.giant-wave-emoji {
+    font-size: 8rem;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+    animation: giantWave 2s ease-in-out forwards;
+    transform-origin: 70% 70%;
+}
+
+@keyframes giantWave {
+    0% { transform: scale(0) rotate(0deg); opacity: 0; }
+    15% { transform: scale(1.2) rotate(14deg); opacity: 1; }
+    30% { transform: scale(1) rotate(-8deg); }
+    40% { transform: scale(1) rotate(14deg); }
+    50% { transform: scale(1) rotate(-4deg); }
+    60% { transform: scale(1) rotate(10deg); }
+    70% { transform: scale(1) rotate(0deg); }
+    85% { transform: scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: scale(0) rotate(0deg); opacity: 0; }
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--color-text-primary);
+}
+
+.contact-desc {
+    color: var(--color-text-secondary);
+    margin-bottom: 32px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.contact-method-btn, .contact-method-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-method-btn:hover, .contact-method-link:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--color-accent);
+    transform: translateX(8px);
+    color: var(--color-accent-light);
+}
+
+.contact-method-btn svg, .contact-method-link svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent);
+}
+
+.availability-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-success);
+    font-weight: 500;
+}
+
+.pitch-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.pitch-container h3 {
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 16px;
+}
+
+.pitch-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pitch-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.pitch-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pitch-item h4 {
+    font-size: 1.2rem;
+    color: var(--color-accent-light);
+    margin-bottom: 8px;
+}
+
+.pitch-item p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.cv-download-section {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.download-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    font-size: 1.1rem;
+}
+
+.download-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 1024px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,25 @@
+:root {
+    --color-bg-primary: #121c15; /* Dark Forest */
+    --color-bg-secondary: #1a261d;
+    --color-bg-card: #202d23;
+    --color-accent: #d4af37;        /* Savanna Gold */
+    --color-accent-light: #e6c86e;
+    --color-accent-glow: rgba(212, 175, 55, 0.3);
+    --color-text-primary: #f2efe9;  /* Off-white Sand */
+    --color-text-secondary: #aebfb4; /* Muted Green-Grey */
+    --color-text-muted: #798c80;
+    --color-border: rgba(212, 175, 55, 0.15); /* Gold tinted border */
+    --color-success: #4ade80;
+    --gradient-hero: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
+    --gradient-card: linear-gradient(145deg, #202d23, #162019);
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* New Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-primary: 'Outfit', sans-serif;
+}

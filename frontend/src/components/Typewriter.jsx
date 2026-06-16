@@ -1,0 +1,64 @@
+import { useState, useEffect, useMemo } from 'react';
+
+const Typewriter = ({ text }) => {
+    const [displayText, setDisplayText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [loopNum, setLoopNum] = useState(0);
+
+    const variants = useMemo(() => {
+        if (!text) return [];
+        // Just 1 quick typo for professionalism
+        if (text === "Nathan Abigail Rahman") {
+            return [
+                "Nathab Abigail Rahman", 
+                text
+            ];
+        }
+        return [text + "x", text];
+    }, [text]);
+
+    useEffect(() => {
+        if (!text || variants.length === 0) return;
+
+        let typingSpeed = isDeleting ? 20 : 60; // Extremely fast backspace, fast typing
+
+        if (!isDeleting && displayText === variants[loopNum]) {
+            if (loopNum === variants.length - 1) return; // Stop forever on the final string
+            
+            // Very short pause before realizing the typo and deleting
+            const timeout = setTimeout(() => setIsDeleting(true), 300);
+            return () => clearTimeout(timeout);
+        } 
+        
+        if (isDeleting && displayText === '') {
+            const timeout = setTimeout(() => {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+            }, 0);
+            return () => clearTimeout(timeout);
+        }
+
+        // Add slight randomness but keep it fast overall
+        if (!isDeleting) {
+            typingSpeed += Math.random() * 30 - 15; 
+        }
+
+        const timeout = setTimeout(() => {
+            setDisplayText(
+                isDeleting 
+                ? variants[loopNum].substring(0, displayText.length - 1)
+                : variants[loopNum].substring(0, displayText.length + 1)
+            );
+        }, typingSpeed);
+
+        return () => clearTimeout(timeout);
+    }, [displayText, isDeleting, loopNum, text, variants]);
+
+    return (
+        <span className="typewriter-text">
+            {displayText}
+        </span>
+    );
+};
+
+export default Typewriter;
