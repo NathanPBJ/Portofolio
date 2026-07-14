@@ -4,18 +4,11 @@ import "portfolio-backend/models"
 
 func GetProfile() models.Profile {
 	return models.Profile{
-		Name:     "Nathan Abigail Rahman",
-		Title:    "Undergraduate Informatics Student at UPN \"Veteran\" Jakarta",
-		Bio:      "Mahasiswa S1 Informatika di Universitas Pembangunan Nasional \"Veteran\" Jakarta angkatan 2024. Sangat antusias mempelajari teknologi baru, mengeksplorasi dunia software engineering, dan memanfaatkan AI untuk memecahkan masalah kompleks.",
-		Avatar:   "/avatar.jpg",
-		Email:    "nathanabigailr@gmail.com",
-		Location: "Jakarta, Indonesia",
+		Name:  "Nathan Abigail Rahman",
+		Title: "Undergraduate Informatics Student at UPN \"Veteran\" Jakarta",
+		Bio:   "Undergraduate Informatics Student at Universitas Pembangunan Nasional \"Veteran\" Jakarta, class of 2024. Highly enthusiastic about learning new technologies, exploring the world of software engineering, and utilizing AI to solve complex problems.",
 		Skills: []string{
 			"Go", "React", "Vite", "JavaScript", "HTML/CSS", "MySQL", "Python", "Java", "C", "C++", "Unity", "Android Studio",
-		},
-		SocialLinks: []models.Social{
-			{Platform: "GitHub", URL: "https://github.com/NathanPBJ", Icon: "github"},
-			{Platform: "LinkedIn", URL: "https://www.linkedin.com/in/nathan-abigail-r-102090310/", Icon: "linkedin"},
 		},
 	}
 }
@@ -24,9 +17,9 @@ func GetProjects() []models.Project {
 	return []models.Project{
 		{
 			ID:          1,
-			Title:       "Sistem Kepegawaian & Absensi — Yayasan Satwa Lestari",
-			Description: "Aplikasi manajemen kepegawaian dan absensi berbasis microservices.",
-			LongDesc:    "Sistem ini dibangun menggunakan arsitektur microservices yang mencakup API Gateway (Node.js/Express), Auth Service dengan Google OAuth, Employee Service (PHP Laravel), dan Attendance Service (Node.js). Fitur utamanya mencakup manajemen data pegawai dengan riwayat jabatan terintegrasi, sistem absensi dengan perhitungan poin kehadiran (gamifikasi sederhana), serta ekspor laporan rekapitulasi absensi otomatis ke format Word (.docx). Seluruh layanan diisolasi dan dijalankan menggunakan Docker dan Docker Compose.",
+			Title:       "Employee & Attendance System - Satwa Lestari Foundation",
+			Description: "A microservices-based employee and attendance management application.",
+			LongDesc:    "This system is built using a microservices architecture that includes an API Gateway (Node.js/Express), Auth Service with Google OAuth, Employee Service (PHP Laravel), and Attendance Service (Node.js). Its main features include employee data management with integrated job history, an attendance system with point calculations (simple gamification), and automatic export of attendance recap reports to Word format (.docx). All services are isolated and run using Docker and Docker Compose.",
 			TechStack:   []string{"Node.js", "Express", "PHP", "Laravel", "MySQL", "Docker"},
 			GithubURL:   "https://github.com/NathanPBJ/uts-pplos-a-2410511036",
 			DemoURL:     "https://youtu.be/KOFXuiQl0m8",
@@ -35,22 +28,22 @@ func GetProjects() []models.Project {
 			Year:        2024,
 		},
 		{
-			ID:          2, // Set to 2 to maintain sequential order
-			Title:       "WisataKita App",
-			Description: "Aplikasi Android native untuk mengeksplorasi destinasi wisata dengan fitur galeri dan pemutar musik latar.",
-			LongDesc:    "WisataKita adalah aplikasi Android native yang dirancang sebagai panduan pariwisata virtual. Aplikasi ini dilengkapi dengan fitur autentikasi pengguna (Login/Register), pengaturan profil, serta daftar destinasi wisata lengkap dengan detailnya. Selain itu, terdapat fitur galeri foto, album, dan pemutar musik latar (MusicService) untuk memberikan pengalaman yang interaktif. Dibangun dengan Kotlin, UI berbasis XML, serta menggunakan library Glide untuk pemuatan gambar secara dinamis.",
-			TechStack:   []string{"Kotlin", "Android Studio", "XML", "Glide", "RecyclerView"},
-			GithubURL:   "https://github.com/NathanPBJ/WisataKitaApp",
+			ID:          2,
+			Title:       "WisataKita",
+			Description: "A bilingual Android travel companion for exploring Indonesian destinations, saving trips, and building a personal travel passport.",
+			LongDesc:    "WisataKita is a native Android app that helps users discover tourism destinations across Indonesia with rich details, search, filtering, location-aware sorting, and travel collection features. It combines offline bundled destination data with optional web-service updates, real-time weather, nearby places, photo discovery, reviews, favorites, albums, and journey stamps. The app also includes onboarding, authentication, bilingual Indonesian/English UI, notifications, Lottie animations, and custom travel-inspired UI polish. Key features include destination discovery with list, grid, and card views; location-aware recommendations; favorites, history, passport stamps, reviews, and photo albums; offline-first JSON and Room caching; and integrations with OpenWeather, Pexels, Geoapify, Google Location, and Google sign-in. Role: App Architect and Android developer responsible for app structure, navigation, data and repository layers, Room persistence, API integrations, travel collection features, notifications, bilingual resources, and UI polish.",
+			TechStack:   []string{"Kotlin", "Android XML Views", "ViewBinding", "Material Components", "Room", "Coroutines", "Lifecycle ViewModel", "Glide", "Lottie", "Google Play Services Location", "Android Credential Manager", "MPAndroidChart", "OpenWeather API", "Pexels API", "Geoapify API", "Gradle Kotlin DSL"},
+			GithubURL:   "https://github.com/Hesham-prog/WisataKita",
 			DemoURL:     "",
-			ImageURL:    "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&q=80", // Added w=800&q=80 for faster loading and better framing
+			ImageURL:    "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&q=80",
 			Featured:    true,
 			Year:        2026,
 		},
 		{
-			ID:          3, // Set to 3 to maintain sequential order
+			ID:          3,
 			Title:       "Pixel Heroes",
-			Description: "Game platformer 2D bergaya klasik seperti Mario Bros yang dibuat dengan Java dan JavaFX.",
-			LongDesc:    "Game platformer 2D yang menempatkan Anda sebagai pahlawan untuk menyelamatkan kerajaan dari Shadow Lord yang mencuri Crystal of Light. Game ini memiliki 3 level dengan kesulitan yang terus meningkat, musuh AI yang berpatroli, sistem koin, fisika platformer realistis (gravitasi, lompat, collision), serta sistem storyline interaktif.",
+			Description: "A classic Mario Bros-style 2D platformer game built with Java and JavaFX.",
+			LongDesc:    "A 2D platformer game that puts you in the shoes of a hero to save the kingdom from the Shadow Lord who stole the Crystal of Light. The game features 3 levels with increasing difficulty, patrolling AI enemies, a coin system, realistic platformer physics (gravity, jumping, collision), and an interactive storyline system.",
 			TechStack:   []string{"Java", "JavaFX", "Maven"},
 			GithubURL:   "https://github.com/Hesham-prog/pixel-heroes",
 			DemoURL:     "",
