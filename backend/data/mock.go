@@ -51,5 +51,17 @@ func GetProjects() []models.Project {
 			Featured:    true,
 			Year:        2024,
 		},
+		{
+			ID:          4,
+			Title:       "SignVault: Sistem Pengarsipan Dokumen Akademik Berbasis Digital Signature",
+			Description: "A secure digital archiving system that ensures document authenticity using RSA-PSS digital signatures and SHA-256 hashing.",
+			LongDesc:    "SignVault is a secure digital document archiving platform built to protect the integrity of academic and legal files. The system calculates a SHA-256 hash for every uploaded document and cryptographically signs it using an RSA-PSS algorithm. Featuring a custom Python API server and a modern React frontend, it provides an intuitive dashboard for users to archive files and perform real-time verification to instantly detect unauthorized modifications or forgery.",
+			TechStack:   []string{"React", "Python", "Cryptography", "SQLite", "Vite", "CSS"},
+			GithubURL:   "https://github.com/NathanPBJ/signvault-digital-archive-uas",
+			DemoURL:     "",
+			ImageURL:    "/signvault-cover.png",
+			Featured:    true,
+			Year:        2024,
+		},
 	}
 }

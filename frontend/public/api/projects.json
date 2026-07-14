@@ -57,6 +57,25 @@
       "image_url": "/pacers-cover.jpg.webp",
       "featured": true,
       "year": 2024
+    },
+    {
+      "id": 4,
+      "title": "SignVault: Sistem Pengarsipan Dokumen Akademik Berbasis Digital Signature",
+      "description": "A secure digital archiving system that ensures document authenticity using RSA-PSS digital signatures and SHA-256 hashing.",
+      "long_description": "SignVault is a secure digital document archiving platform built to protect the integrity of academic and legal files. The system calculates a SHA-256 hash for every uploaded document and cryptographically signs it using an RSA-PSS algorithm. Featuring a custom Python API server and a modern React frontend, it provides an intuitive dashboard for users to archive files and perform real-time verification to instantly detect unauthorized modifications or forgery.",
+      "tech_stack": [
+        "React",
+        "Python",
+        "Cryptography",
+        "SQLite",
+        "Vite",
+        "CSS"
+      ],
+      "github_url": "https://github.com/NathanPBJ/signvault-digital-archive-uas",
+      "demo_url": "",
+      "image_url": "/signvault-cover.png",
+      "featured": true,
+      "year": 2024
     }
   ],
   "message": "OK"
