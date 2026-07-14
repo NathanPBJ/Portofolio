@@ -80,14 +80,14 @@
     {
       "id": 5,
       "title": "Smart Crowd Control Platform",
-      "description": "A smart, microservices-oriented crowd management platform designed for public safety using real-time IoT and AI predictions.",
-      "long_description": "Smart Crowd Control Platform is an advanced, microservices-oriented system designed to enhance public safety by monitoring and managing crowds in real time. It integrates IoT sensor data, machine learning for risk prediction and anomaly detection, and multiple backend PHP services to provide actionable insights. Deployed using Docker and Kubernetes, the platform ensures high availability, secure authentication via OAuth 2.0, and comprehensive system monitoring.",
+      "description": "A smart crowd management platform where I developed the core Machine Learning models for real-time risk prediction and anomaly detection.",
+      "long_description": "Smart Crowd Control Platform is an advanced system designed to enhance public safety by monitoring crowds in real-time. Working within a team, my primary contribution was as the Machine Learning Engineer. I exclusively designed and developed the AI predictive models (using Python, Scikit-Learn, and FastAPI) that analyze live IoT sensor data to generate actionable insights and detect anomalies. My ML models were then integrated into the broader microservices architecture managed by my teammates.",
       "tech_stack": [
-        "Node.js",
         "Python",
-        "Kubernetes",
-        "RabbitMQ",
-        "Grafana",
+        "Scikit-Learn",
+        "FastAPI",
+        "Machine Learning",
+        "IoT",
         "Docker"
       ],
       "github_url": "https://github.com/hendrvy/tubes-pplbs-3",

@@ -66,9 +66,9 @@ func GetProjects() []models.Project {
 		{
 			ID:          5,
 			Title:       "Smart Crowd Control Platform",
-			Description: "A smart, microservices-oriented crowd management platform designed for public safety using real-time IoT and AI predictions.",
-			LongDesc:    "Smart Crowd Control Platform is an advanced, microservices-oriented system designed to enhance public safety by monitoring and managing crowds in real time. It integrates IoT sensor data, machine learning for risk prediction and anomaly detection, and multiple backend PHP services to provide actionable insights. Deployed using Docker and Kubernetes, the platform ensures high availability, secure authentication via OAuth 2.0, and comprehensive system monitoring.",
-			TechStack:   []string{"Node.js", "Python", "Kubernetes", "RabbitMQ", "Grafana", "Docker"},
+			Description: "A smart crowd management platform where I developed the core Machine Learning models for real-time risk prediction and anomaly detection.",
+			LongDesc:    "Smart Crowd Control Platform is an advanced system designed to enhance public safety by monitoring crowds in real-time. Working within a team, my primary contribution was as the Machine Learning Engineer. I exclusively designed and developed the AI predictive models (using Python, Scikit-Learn, and FastAPI) that analyze live IoT sensor data to generate actionable insights and detect anomalies. My ML models were then integrated into the broader microservices architecture managed by my teammates.",
+			TechStack:   []string{"Python", "Scikit-Learn", "FastAPI", "Machine Learning", "IoT", "Docker"},
 			GithubURL:   "https://github.com/hendrvy/tubes-pplbs-3",
 			DemoURL:     "",
 			ImageURL:    "/crowdcontrol-cover.png",
