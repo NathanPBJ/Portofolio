@@ -9,13 +9,10 @@
       "tech_stack": [
         "Node.js",
         "Express.js",
-        "PHP 8.3",
         "Laravel 11",
-        "MySQL 8.0",
+        "MySQL",
         "Docker",
-        "Docker Compose",
-        "JWT",
-        "Google OAuth 2.0"
+        "OAuth 2.0"
       ],
       "github_url": "",
       "demo_url": "https://youtu.be/KOFXuiQl0m8",
@@ -30,21 +27,11 @@
       "long_description": "WisataKita is a native Android app that helps users discover tourism destinations across Indonesia with rich details, search, filtering, location-aware sorting, and travel collection features. It combines offline bundled destination data with optional web-service updates, real-time weather, nearby places, photo discovery, reviews, favorites, albums, and journey stamps. The app also includes onboarding, authentication, bilingual Indonesian/English UI, notifications, Lottie animations, and custom travel-inspired UI polish. Key features include destination discovery with list, grid, and card views; location-aware recommendations; favorites, history, passport stamps, reviews, and photo albums; offline-first JSON and Room caching; and integrations with OpenWeather, Pexels, Geoapify, Google Location, and Google sign-in. Role: App Architect and Android developer responsible for app structure, navigation, data and repository layers, Room persistence, API integrations, travel collection features, notifications, bilingual resources, and UI polish.",
       "tech_stack": [
         "Kotlin",
-        "Android XML Views",
-        "ViewBinding",
-        "Material Components",
+        "Android XML",
         "Room",
         "Coroutines",
-        "Lifecycle ViewModel",
         "Glide",
-        "Lottie",
-        "Google Play Services Location",
-        "Android Credential Manager",
-        "MPAndroidChart",
-        "OpenWeather API",
-        "Pexels API",
-        "Geoapify API",
-        "Gradle Kotlin DSL"
+        "Location API"
       ],
       "github_url": "https://github.com/Hesham-prog/WisataKita",
       "demo_url": "",
@@ -58,8 +45,7 @@
       "description": "An interactive Indiana Pacers command-center dashboard visualizing live roster and team statistics.",
       "long_description": "A premium sports data visualization dashboard built for the Indiana Pacers, featuring a custom navy, gold, and court-grid visual language. The application dynamically fetches real-time data from ESPN and Wikipedia APIs to populate interactive roster cards, player stat leaderboards, team rankings, and franchise history.",
       "tech_stack": [
-        "React 19",
-        "Vite",
+        "React",
         "Tailwind CSS",
         "Recharts",
         "Zustand",
