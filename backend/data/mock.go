@@ -47,7 +47,7 @@ func GetProjects() []models.Project {
 			TechStack:   []string{"React 19", "Vite", "Tailwind CSS", "Recharts", "Zustand", "React Query", "XState"},
 			GithubURL:   "",
 			DemoURL:     "",
-			ImageURL:    "/pacers-cover.jpg",
+			ImageURL:    "/pacers-cover.jpg.webp",
 			Featured:    true,
 			Year:        2024,
 		},
