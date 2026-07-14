@@ -12,7 +12,12 @@ const Contact = () => {
     };
 
     const handleDownloadCV = () => {
-        alert("My CV is currently being updated! Please reach out to me via email or LinkedIn in the meantime.");
+        const link = document.createElement('a');
+        link.href = '/nathan_cv.pdf';
+        link.download = 'Nathan_Abigail_Rahman_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
