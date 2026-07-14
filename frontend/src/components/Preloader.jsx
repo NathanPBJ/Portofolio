@@ -7,7 +7,6 @@ const Preloader = () => {
     const [isUnmounted, setIsUnmounted] = useState(false);
 
     useEffect(() => {
-        // Smooth progress bar simulation
         let currentProgress = 0;
         const interval = setInterval(() => {
             currentProgress += Math.floor(Math.random() * 5) + 1; 
@@ -16,22 +15,19 @@ const Preloader = () => {
                 setProgress(100);
                 clearInterval(interval);
                 
-                // Trigger curtain slide up animation after a short pause at 100%
                 setTimeout(() => {
                     setIsFinished(true);
-                    document.body.style.overflow = 'unset'; // Unlock scroll as soon as it slides up
+                    document.body.style.overflow = 'unset';
                 }, 500);
 
-                // Unmount completely after CSS animation ends
                 setTimeout(() => {
                     setIsUnmounted(true);
-                }, 1500); // 500ms pause + 1000ms animation
+                }, 1500);
             } else {
                 setProgress(currentProgress);
             }
         }, 40);
 
-        // Lock scrolling while preloader is active
         document.body.style.overflow = 'hidden';
 
         return () => {

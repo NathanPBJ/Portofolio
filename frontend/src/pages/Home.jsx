@@ -46,7 +46,6 @@ const Home = () => {
 
     return (
         <main className="home">
-            {/* Hero Section */}
             <section className="hero container">
                 <div className="hero-content">
                     <div className="availability-badge">
@@ -75,7 +74,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Skills Section */}
             <section className="skills-section section container">
                 <h2 className="section-title">My Skills</h2>
                     <div className="skills-grid">
@@ -88,7 +86,6 @@ const Home = () => {
                     </div>
             </section>
 
-            {/* Featured Projects Section */}
             <section className="featured-section section container">
                 <div className="section-header">
                     <h2 className="section-title">Featured Projects</h2>
@@ -106,7 +103,6 @@ const Home = () => {
                 )}
             </section>
 
-            {/* Stats Section */}
             <section className="stats-section section container">
                 <div className="stats-grid">
                     <div className="stat-item">

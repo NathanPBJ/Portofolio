@@ -12,7 +12,6 @@ import (
 func main() {
 	router := gin.Default()
 
-	// CORS Configuration
 	config := cors.Config{
 		AllowOrigins:     []string{"http://localhost:5173"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
@@ -22,7 +21,6 @@ func main() {
 	}
 	router.Use(cors.New(config))
 
-	// API Routes
 	registerAPIRoutes(router.Group("/api"))
 	registerAPIRoutes(router.Group("/_/backend/api"))
 

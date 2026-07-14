@@ -11,7 +11,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 32px;
-    margin-bottom: 24px; /* Not touching, but close enough to anchor to the bottom */
+    margin-bottom: 24px;
 }
 
 .footer-logo {

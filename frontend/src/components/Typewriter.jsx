@@ -7,7 +7,6 @@ const Typewriter = ({ text }) => {
 
     const variants = useMemo(() => {
         if (!text) return [];
-        // Just 1 quick typo for professionalism
         if (text === "Nathan Abigail Rahman") {
             return [
                 "Nathab Abigail Rahman", 
@@ -20,12 +19,11 @@ const Typewriter = ({ text }) => {
     useEffect(() => {
         if (!text || variants.length === 0) return;
 
-        let typingSpeed = isDeleting ? 20 : 60; // Extremely fast backspace, fast typing
+        let typingSpeed = isDeleting ? 20 : 60;
 
         if (!isDeleting && displayText === variants[loopNum]) {
-            if (loopNum === variants.length - 1) return; // Stop forever on the final string
+            if (loopNum === variants.length - 1) return;
             
-            // Very short pause before realizing the typo and deleting
             const timeout = setTimeout(() => setIsDeleting(true), 300);
             return () => clearTimeout(timeout);
         } 
@@ -38,7 +36,6 @@ const Typewriter = ({ text }) => {
             return () => clearTimeout(timeout);
         }
 
-        // Add slight randomness but keep it fast overall
         if (!isDeleting) {
             typingSpeed += Math.random() * 30 - 15; 
         }

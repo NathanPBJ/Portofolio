@@ -6,7 +6,7 @@
 
 .section {
     opacity: 0;
-    padding: 120px 0; /* Increased from 80px for more spacing between sections */
+    padding: 120px 0;
 }
 
 .hero {
@@ -19,7 +19,7 @@
 }
 
 .hero-content {
-    flex: 1.5; /* Give text more space so it doesn't wrap/overlap easily */
+    flex: 1.5;
     max-width: 700px;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .hero-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem); /* Make font size smaller for long names */
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
     margin-bottom: 16px;
 }
 
@@ -99,7 +99,7 @@
 
 .btn-primary {
     background: var(--gradient-hero);
-    color: #121c15; /* Dark text on gold button */
+    color: #121c15;
     box-shadow: var(--shadow-glow);
 }
 
@@ -140,7 +140,6 @@
     border: 4px solid var(--color-bg-primary);
 }
 
-/* Skills */
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 40px;
@@ -158,7 +157,7 @@
     padding: 24px;
     text-align: center;
     font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy float transition */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: var(--border-radius-md);
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
@@ -192,7 +191,6 @@
     font-size: 1.1rem;
 }
 
-/* Projects */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -216,7 +214,6 @@
     gap: 32px;
 }
 
-/* Stats */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

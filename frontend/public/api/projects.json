@@ -3,9 +3,9 @@
   "data": [
     {
       "id": 1,
-      "title": "Sistem Kepegawaian & Absensi - Yayasan Satwa Lestari",
-      "description": "Aplikasi manajemen kepegawaian dan absensi berbasis microservices.",
-      "long_description": "Sistem ini dibangun menggunakan arsitektur microservices yang mencakup API Gateway (Node.js/Express), Auth Service dengan Google OAuth, Employee Service (PHP Laravel), dan Attendance Service (Node.js). Fitur utamanya mencakup manajemen data pegawai dengan riwayat jabatan terintegrasi, sistem absensi dengan perhitungan poin kehadiran (gamifikasi sederhana), serta ekspor laporan rekapitulasi absensi otomatis ke format Word (.docx). Seluruh layanan diisolasi dan dijalankan menggunakan Docker dan Docker Compose.",
+      "title": "Employee & Attendance System - Satwa Lestari Foundation",
+      "description": "A microservices-based employee and attendance management application.",
+      "long_description": "This system is built using a microservices architecture that includes an API Gateway (Node.js/Express), Auth Service with Google OAuth, Employee Service (PHP Laravel), and Attendance Service (Node.js). Its main features include employee data management with integrated job history, an attendance system with point calculations (simple gamification), and automatic export of attendance recap reports to Word format (.docx). All services are isolated and run using Docker and Docker Compose.",
       "tech_stack": [
         "Node.js",
         "Express",
@@ -22,17 +22,28 @@
     },
     {
       "id": 2,
-      "title": "WisataKita App",
-      "description": "Aplikasi Android native untuk mengeksplorasi destinasi wisata dengan fitur galeri dan pemutar musik latar.",
-      "long_description": "WisataKita adalah aplikasi Android native yang dirancang sebagai panduan pariwisata virtual. Aplikasi ini dilengkapi dengan fitur autentikasi pengguna (Login/Register), pengaturan profil, serta daftar destinasi wisata lengkap dengan detailnya. Selain itu, terdapat fitur galeri foto, album, dan pemutar musik latar (MusicService) untuk memberikan pengalaman yang interaktif. Dibangun dengan Kotlin, UI berbasis XML, serta menggunakan library Glide untuk pemuatan gambar secara dinamis.",
+      "title": "WisataKita",
+      "description": "A bilingual Android travel companion for exploring Indonesian destinations, saving trips, and building a personal travel passport.",
+      "long_description": "WisataKita is a native Android app that helps users discover tourism destinations across Indonesia with rich details, search, filtering, location-aware sorting, and travel collection features. It combines offline bundled destination data with optional web-service updates, real-time weather, nearby places, photo discovery, reviews, favorites, albums, and journey stamps. The app also includes onboarding, authentication, bilingual Indonesian/English UI, notifications, Lottie animations, and custom travel-inspired UI polish. Key features include destination discovery with list, grid, and card views; location-aware recommendations; favorites, history, passport stamps, reviews, and photo albums; offline-first JSON and Room caching; and integrations with OpenWeather, Pexels, Geoapify, Google Location, and Google sign-in. Role: App Architect and Android developer responsible for app structure, navigation, data and repository layers, Room persistence, API integrations, travel collection features, notifications, bilingual resources, and UI polish.",
       "tech_stack": [
         "Kotlin",
-        "Android Studio",
-        "XML",
+        "Android XML Views",
+        "ViewBinding",
+        "Material Components",
+        "Room",
+        "Coroutines",
+        "Lifecycle ViewModel",
         "Glide",
-        "RecyclerView"
+        "Lottie",
+        "Google Play Services Location",
+        "Android Credential Manager",
+        "MPAndroidChart",
+        "OpenWeather API",
+        "Pexels API",
+        "Geoapify API",
+        "Gradle Kotlin DSL"
       ],
-      "github_url": "https://github.com/NathanPBJ/WisataKitaApp",
+      "github_url": "https://github.com/Hesham-prog/WisataKita",
       "demo_url": "",
       "image_url": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&q=80",
       "featured": true,
@@ -41,8 +52,8 @@
     {
       "id": 3,
       "title": "Pixel Heroes",
-      "description": "Game platformer 2D bergaya klasik seperti Mario Bros yang dibuat dengan Java dan JavaFX.",
-      "long_description": "Game platformer 2D yang menempatkan Anda sebagai pahlawan untuk menyelamatkan kerajaan dari Shadow Lord yang mencuri Crystal of Light. Game ini memiliki 3 level dengan kesulitan yang terus meningkat, musuh AI yang berpatroli, sistem koin, fisika platformer realistis (gravitasi, lompat, collision), serta sistem storyline interaktif.",
+      "description": "A classic Mario Bros-style 2D platformer game built with Java and JavaFX.",
+      "long_description": "A 2D platformer game that puts you in the shoes of a hero to save the kingdom from the Shadow Lord who stole the Crystal of Light. The game features 3 levels with increasing difficulty, patrolling AI enemies, a coin system, realistic platformer physics (gravity, jumping, collision), and an interactive storyline system.",
       "tech_stack": [
         "Java",
         "JavaFX",

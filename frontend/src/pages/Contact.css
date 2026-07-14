@@ -1,5 +1,5 @@
 .contact-page {
-    padding-top: 160px; /* Increased from 120px for consistency */
+    padding-top: 160px;
     min-height: 80vh;
 }
 
@@ -16,7 +16,6 @@
     overflow: hidden;
 }
 
-/* Interactive easter egg button */
 .easter-egg-btn {
     position: absolute;
     top: -40px;
@@ -43,7 +42,6 @@
     transform: scale(0.9);
 }
 
-/* Giant Wave Overlay */
 .giant-wave-overlay {
     position: fixed;
     top: 0;
@@ -96,7 +94,7 @@
     margin-bottom: 40px;
 }
 
-.contact-method-btn, .contact-method-link {
+.contact-method-link {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -112,14 +110,14 @@
     text-align: left;
 }
 
-.contact-method-btn:hover, .contact-method-link:hover {
+.contact-method-link:hover {
     background: rgba(255,255,255,0.05);
     border-color: var(--color-accent);
     transform: translateX(8px);
     color: var(--color-accent-light);
 }
 
-.contact-method-btn svg, .contact-method-link svg {
+.contact-method-link svg {
     width: 24px;
     height: 24px;
     color: var(--color-accent);

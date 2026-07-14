@@ -1,5 +1,5 @@
 .projects-page {
-    padding-top: 160px; /* Increased from 120px to prevent touching the navbar/browser */
+    padding-top: 160px;
     min-height: 80vh;
 }
 
