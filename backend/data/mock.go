@@ -45,7 +45,7 @@ func GetProjects() []models.Project {
 			Description: "An interactive Indiana Pacers command-center dashboard visualizing live roster and team statistics.",
 			LongDesc:    "A premium sports data visualization dashboard built for the Indiana Pacers, featuring a custom navy, gold, and court-grid visual language. The application dynamically fetches real-time data from ESPN and Wikipedia APIs to populate interactive roster cards, player stat leaderboards, team rankings, and franchise history.",
 			TechStack:   []string{"React 19", "Vite", "Tailwind CSS", "Recharts", "Zustand", "React Query", "XState"},
-			GithubURL:   "",
+			GithubURL:   "https://github.com/NathanPBJ/nba-team-data-story",
 			DemoURL:     "",
 			ImageURL:    "/pacers-cover.jpg.webp",
 			Featured:    true,
