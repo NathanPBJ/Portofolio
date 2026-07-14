@@ -76,6 +76,25 @@
       "image_url": "/signvault-cover.png",
       "featured": true,
       "year": 2024
+    },
+    {
+      "id": 5,
+      "title": "Smart Crowd Control Platform",
+      "description": "A smart, microservices-oriented crowd management platform designed for public safety using real-time IoT and AI predictions.",
+      "long_description": "Smart Crowd Control Platform is an advanced, microservices-oriented system designed to enhance public safety by monitoring and managing crowds in real time. It integrates IoT sensor data, machine learning for risk prediction and anomaly detection, and multiple backend PHP services to provide actionable insights. Deployed using Docker and Kubernetes, the platform ensures high availability, secure authentication via OAuth 2.0, and comprehensive system monitoring.",
+      "tech_stack": [
+        "Node.js",
+        "Python",
+        "Kubernetes",
+        "RabbitMQ",
+        "Grafana",
+        "Docker"
+      ],
+      "github_url": "https://github.com/hendrvy/tubes-pplbs-3",
+      "demo_url": "",
+      "image_url": "/crowdcontrol-cover.png",
+      "featured": true,
+      "year": 2024
     }
   ],
   "message": "OK"
