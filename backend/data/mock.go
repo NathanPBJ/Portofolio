@@ -17,11 +17,11 @@ func GetProjects() []models.Project {
 	return []models.Project{
 		{
 			ID:          1,
-			Title:       "Employee & Attendance System - Satwa Lestari Foundation",
-			Description: "A microservices-based employee and attendance management application.",
-			LongDesc:    "This system is built using a microservices architecture that includes an API Gateway (Node.js/Express), Auth Service with Google OAuth, Employee Service (PHP Laravel), and Attendance Service (Node.js). Its main features include employee data management with integrated job history, an attendance system with point calculations (simple gamification), and automatic export of attendance recap reports to Word format (.docx). All services are isolated and run using Docker and Docker Compose.",
-			TechStack:   []string{"Node.js", "Express", "PHP", "Laravel", "MySQL", "Docker"},
-			GithubURL:   "https://github.com/NathanPBJ/uts-pplos-a-2410511036",
+			Title:       "Sistem Kepegawaian & Absensi \u2014 Yayasan Satwa Lestari",
+			Description: "A microservices-based employee management and attendance system built for a wildlife conservation foundation (Note: fictional company created for a university final project/UAS).",
+			LongDesc:    "Developed as a university project for a Service-Oriented Software Development course, this application provides a robust microservices architecture for managing employees at 'Yayasan Satwa Lestari.' It utilizes an API Gateway to route traffic to independent services handling authentication, employee data (Laravel), and attendance tracking (Node.js). The platform features Google OAuth integration, a gamified attendance point system with a leaderboard, and automated generation of monthly .docx reports.",
+			TechStack:   []string{"Node.js", "Express.js", "PHP 8.3", "Laravel 11", "MySQL 8.0", "Docker", "Docker Compose", "JWT", "Google OAuth 2.0"},
+			GithubURL:   "",
 			DemoURL:     "https://youtu.be/KOFXuiQl0m8",
 			ImageURL:    "/microservices-cover.png",
 			Featured:    true,
