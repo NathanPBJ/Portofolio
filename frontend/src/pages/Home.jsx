@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 import ProjectCard from '../components/ProjectCard';
 import Typewriter from '../components/Typewriter';
 import SpotifyWidget from '../components/SpotifyWidget';
-import GemsbokRider from '../components/GemsbokRider';
+import RhinoRun from '../components/RhinoRun';
 import { SiGo, SiReact, SiVite, SiJavascript, SiHtml5, SiMysql, SiPython, SiC, SiCplusplus, SiUnity, SiAndroidstudio } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import './Home.css';
@@ -144,7 +144,7 @@ const Home = () => {
                         <SpotifyWidget />
                     </div>
                     <div className="dashboard-card game-card">
-                        <GemsbokRider />
+                        <RhinoRun />
                     </div>
                 </div>
             </section>

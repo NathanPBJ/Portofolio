@@ -86,6 +86,32 @@ func GetSpotifyStatus(c *gin.Context) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusNoContent || resp.StatusCode == http.StatusNotFound {
+		// Fetch Recently Played
+		reqRec, errRec := http.NewRequest("GET", "https://api.spotify.com/v1/me/player/recently-played?limit=1", nil)
+		if errRec == nil {
+			reqRec.Header.Add("Authorization", "Bearer "+accessToken)
+			respRec, errRec2 := client.Do(reqRec)
+			if errRec2 == nil {
+				defer respRec.Body.Close()
+				if respRec.StatusCode == http.StatusOK {
+					var resultRec map[string]interface{}
+					if err := json.NewDecoder(respRec.Body).Decode(&resultRec); err == nil {
+						items, ok := resultRec["items"].([]interface{})
+						if ok && len(items) > 0 {
+							item := items[0].(map[string]interface{})
+							c.JSON(http.StatusOK, gin.H{
+								"is_playing": false,
+								"recently_played": true,
+								"item": item["track"],
+								"played_at": item["played_at"],
+							})
+							return
+						}
+					}
+				}
+			}
+		}
+
 		c.JSON(http.StatusOK, gin.H{"is_playing": false})
 		return
 	}
@@ -100,6 +126,9 @@ func GetSpotifyStatus(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to decode response"})
 		return
 	}
+	
+	// Add recently_played flag as false for consistency
+	result["recently_played"] = false
 
 	c.JSON(http.StatusOK, result)
 }
