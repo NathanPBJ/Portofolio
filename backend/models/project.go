@@ -10,5 +10,6 @@ type Project struct {
 	DemoURL     string   `json:"demo_url"`
 	ImageURL    string   `json:"image_url"`
 	Featured    bool     `json:"featured"`
+	Status      string   `json:"status"`
 	Year        int      `json:"year"`
 }

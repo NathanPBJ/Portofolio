@@ -54,18 +54,35 @@
     letter-spacing: 0.05em;
 }
 
-.featured-badge {
+.badges-container {
     position: absolute;
     top: 16px;
     right: 16px;
-    background: var(--color-accent);
-    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.featured-badge, .status-badge {
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.featured-badge {
+    background: var(--color-accent);
+    color: white;
+}
+
+.status-badge {
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
 }
 
 .project-content {

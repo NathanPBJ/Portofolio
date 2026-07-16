@@ -97,6 +97,7 @@ func GetProjects() []models.Project {
 			DemoURL:     "",
 			ImageURL:    "/livingglobe-cover.png",
 			Featured:    true,
+			Status:      "Active Development",
 			Year:        2026,
 		},
 	}

@@ -19,7 +19,10 @@ const ProjectCard = ({ project }) => {
                         <span className="project-initials">{project.title.substring(0, 2).toUpperCase()}</span>
                     </div>
                 )}
-                {project.featured && <span className="featured-badge">Featured</span>}
+                <div className="badges-container">
+                    {project.featured && <span className="featured-badge">Featured</span>}
+                    {project.status && <span className="status-badge">{project.status}</span>}
+                </div>
             </div>
             
             <div className="project-content">
