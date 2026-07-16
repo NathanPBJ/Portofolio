@@ -44,6 +44,33 @@ const Home = () => {
 
     const featuredProjects = projects ? projects.filter(p => p.featured).slice(0, 3) : [];
 
+    const [tiltStyle, setTiltStyle] = useState({});
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate rotation degrees (subtle: max 15 degrees)
+        const rotateX = ((y - centerY) / centerY) * -15;
+        const rotateY = ((x - centerX) / centerX) * 15;
+        
+        setTiltStyle({
+            transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+            transition: 'transform 0.1s ease-out'
+        });
+    };
+
+    const handleMouseLeave = () => {
+        setTiltStyle({
+            transform: `perspective(1000px) rotateX(0deg) rotateY(0deg)`,
+            transition: 'transform 0.5s ease-out'
+        });
+    };
+
     return (
         <main className="home">
             <section className="hero container">
@@ -68,7 +95,12 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="hero-image-wrapper animate-floating">
-                    <div className="hero-image-border">
+                    <div 
+                        className="hero-image-border"
+                        style={tiltStyle}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                    >
                         <img src="/profile.png" alt="Profile" className="hero-image" />
                     </div>
                 </div>
