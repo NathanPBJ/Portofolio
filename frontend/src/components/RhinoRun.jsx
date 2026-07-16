@@ -250,20 +250,31 @@ const RhinoRun = () => {
             ctx.scale(1.5, 1.5);
             
             // Animation for galloping legs (smooth swinging)
-            const runA = (p.grounded && !gameOver) ? Math.sin(state.frames * 0.4) * 4 : 0;
-            const runB = (p.grounded && !gameOver) ? Math.cos(state.frames * 0.4) * 4 : 0;
+            const runA = (p.grounded && !gameOver) ? Math.sin(state.frames * 0.4) : 0;
+            const runB = (p.grounded && !gameOver) ? Math.cos(state.frames * 0.4) : 0;
             
             ctx.fillStyle = '#eeeeee';
 
+            const drawLeg = (ox, oy, angle) => {
+                ctx.save();
+                ctx.translate(ox, oy);
+                ctx.rotate(angle);
+                // Leg is drawn downwards from the pivot point
+                ctx.beginPath();
+                ctx.moveTo(-3, -2); // Start inside body to prevent gaps
+                ctx.lineTo(3, -2);
+                ctx.lineTo(2, 12); // Foot
+                ctx.lineTo(-2.5, 12); // Foot
+                ctx.closePath();
+                ctx.fill();
+                // Little toe bump
+                ctx.fillRect(1.5, 10.5, 1.5, 1.5);
+                ctx.restore();
+            };
+
             // Draw Legs first (far side)
-            // Back far leg
-            ctx.beginPath();
-            ctx.ellipse(6 + runB, 20, 2.5, 7, runB * 0.1, 0, Math.PI * 2);
-            ctx.fill();
-            // Front far leg
-            ctx.beginPath();
-            ctx.ellipse(22 - runA, 20, 2.5, 7, -runA * 0.1, 0, Math.PI * 2);
-            ctx.fill();
+            drawLeg(7, 15, runB * 0.4); // Back far leg
+            drawLeg(21, 15, -runA * 0.4); // Front far leg
 
             // Main Rhino Body (Organic curved silhouette)
             ctx.beginPath();
@@ -314,14 +325,8 @@ const RhinoRun = () => {
             ctx.fillStyle = '#eeeeee';
 
             // Near Legs (drawn over body)
-            // Back near leg
-            ctx.beginPath();
-            ctx.ellipse(6 + runA, 20, 3, 7, runA * 0.1, 0, Math.PI * 2);
-            ctx.fill();
-            // Front near leg
-            ctx.beginPath();
-            ctx.ellipse(22 - runB, 20, 3, 7, -runB * 0.1, 0, Math.PI * 2);
-            ctx.fill();
+            drawLeg(7, 15, runA * 0.4); // Back near leg
+            drawLeg(21, 15, -runB * 0.4); // Front near leg
 
             // Small tail with tuft
             ctx.beginPath();
