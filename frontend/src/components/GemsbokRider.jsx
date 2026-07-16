@@ -195,6 +195,22 @@ const GemsbokRider = () => {
             gGrad.addColorStop(1, '#1a0e08');
             ctx.fillStyle = gGrad;
             ctx.fillRect(0, state.groundY, canvas.width, canvas.height - state.groundY);
+            
+            // Ground Texture (scrolling dirt and savanna grass)
+            ctx.fillStyle = '#4e3b2b';
+            for(let i=0; i<30; i++) {
+                let gx = (i * 20 - (state.frames * state.speed * 0.8) % 600);
+                if (gx < -20) gx += 600;
+                if (gx < canvas.width) {
+                    // Dirt speck
+                    ctx.fillRect(gx, state.groundY + 6 + (i%4)*6, 3 + (i%2)*2, 2);
+                    // Dry savanna grass
+                    ctx.fillStyle = '#6e6b45';
+                    ctx.fillRect(gx + 8, state.groundY - (i%3)*3, 1.5, 4 + (i%3)*3);
+                    ctx.fillStyle = '#4e3b2b';
+                }
+            }
+
             ctx.strokeStyle = '#c8a96e';
             ctx.lineWidth = 1.5;
             ctx.beginPath();
@@ -229,20 +245,41 @@ const GemsbokRider = () => {
                     ctx.lineWidth = 1;
                     ctx.stroke();
                 } else {
-                    // Breakable crate with X
-                    ctx.fillStyle = '#c0392b';
+                    // Breakable Wooden Crate with realistic texture
+                    ctx.fillStyle = '#8B5A2B'; // Base wood brown
                     ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
-                    ctx.strokeStyle = '#e74c3c';
-                    ctx.lineWidth = 2;
-                    ctx.strokeRect(obs.x + 1, obs.y + 1, obs.width - 2, obs.height - 2);
-                    ctx.strokeStyle = 'rgba(255,100,100,0.5)';
-                    ctx.lineWidth = 1.5;
+                    
+                    // Vertical wooden planks
+                    ctx.strokeStyle = '#5C3A21'; // Darker wood lines
+                    ctx.lineWidth = 1;
                     ctx.beginPath();
-                    ctx.moveTo(obs.x + 4, obs.y + 4);
-                    ctx.lineTo(obs.x + obs.width - 4, obs.y + obs.height - 4);
-                    ctx.moveTo(obs.x + obs.width - 4, obs.y + 4);
-                    ctx.lineTo(obs.x + 4, obs.y + obs.height - 4);
+                    for(let p=1; p<=3; p++) {
+                        ctx.moveTo(obs.x + (obs.width/4)*p, obs.y);
+                        ctx.lineTo(obs.x + (obs.width/4)*p, obs.y + obs.height);
+                    }
                     ctx.stroke();
+                    
+                    // Cross beams
+                    ctx.strokeStyle = '#6D4C41';
+                    ctx.lineWidth = 2.5;
+                    ctx.beginPath();
+                    ctx.moveTo(obs.x + 2, obs.y + 2);
+                    ctx.lineTo(obs.x + obs.width - 2, obs.y + obs.height - 2);
+                    ctx.moveTo(obs.x + obs.width - 2, obs.y + 2);
+                    ctx.lineTo(obs.x + 2, obs.y + obs.height - 2);
+                    ctx.stroke();
+                    
+                    // Dark frame Border
+                    ctx.strokeStyle = '#3E2723';
+                    ctx.lineWidth = 2.5;
+                    ctx.strokeRect(obs.x + 1.25, obs.y + 1.25, obs.width - 2.5, obs.height - 2.5);
+
+                    // Iron Nails in corners
+                    ctx.fillStyle = '#9E9E9E';
+                    ctx.fillRect(obs.x + 3, obs.y + 3, 2, 2);
+                    ctx.fillRect(obs.x + obs.width - 5, obs.y + 3, 2, 2);
+                    ctx.fillRect(obs.x + 3, obs.y + obs.height - 5, 2, 2);
+                    ctx.fillRect(obs.x + obs.width - 5, obs.y + obs.height - 5, 2, 2);
                 }
             });
 
@@ -264,26 +301,26 @@ const GemsbokRider = () => {
 
             // ── Color Palette (matching pixel-art reference image) ───
             const CO = {
-                body:    '#c5c0b0',  // gemsbok silvery-gray
-                bodyL:   '#d8d4c8',  // lighter belly
-                bodyS:   '#8f8b7e',  // dorsal shadow
-                legBlk:  '#1c1810',  // black lower legs
-                legWht:  '#eceae0',  // white leg socks
-                mane:    '#1e160a',  // dark mane and tail
-                hornD:   '#5c4a28',  // horn dark
-                hornL:   '#8c7448',  // horn light highlight
-                fWht:    '#eee8dc',  // white face markings
-                fBlk:    '#1a1410',  // black face markings
-                harness: '#5a3218',  // brown leather bridle / reins
-                shirt:   '#d5c89a',  // explorer cream shirt
-                vest:    '#3c2510',  // dark brown leather vest
-                pants:   '#4a5830',  // olive / army pants
-                boots:   '#2a1808',  // dark brown riding boots
-                hat:     '#6a4a25',  // wide-brim hat brown
-                hatD:    '#3c2810',  // hat band / shadow
-                skin:    '#c07848',  // rider skin tone
-                belt:    '#4a2e15',  // leather belt
-                saddle:  '#7a5030',  // saddle leather
+                body:    '#b4a38b',  // gemsbok tan/fawn
+                bodyL:   '#dcd4c6',  // lighter belly
+                bodyS:   '#8a7b66',  // dorsal shadow
+                legBlk:  '#151515',  // black lower legs
+                legWht:  '#f0ebd8',  // white leg socks
+                mane:    '#111111',  // dark mane and tail
+                hornD:   '#1a1a1a',  // horn dark (almost black)
+                hornL:   '#444444',  // horn light highlight
+                fWht:    '#f5f0e6',  // white face markings
+                fBlk:    '#111111',  // black face markings
+                harness: '#4a2e15',  // brown leather bridle / reins
+                shirt:   '#e8dfc8',  // explorer cream shirt
+                vest:    '#4a3018',  // dark brown leather vest
+                pants:   '#556b2f',  // olive / army pants
+                boots:   '#2b1d0f',  // dark brown riding boots
+                hat:     '#5c4022',  // wide-brim hat brown
+                hatD:    '#36220d',  // hat band / shadow
+                skin:    '#d28b5e',  // rider skin tone
+                belt:    '#3a200a',  // leather belt
+                saddle:  '#684122',  // saddle leather
             };
 
             // ── Leg helper: thigh + black lower leg + white sock + hoof ─
@@ -327,25 +364,30 @@ const GemsbokRider = () => {
             drawLeg(12, 11, gA * 0.45 + 0.15, CO.body);  // rear-near
 
             // ── GEMSBOK BODY ─────────────────────────────────────────
-            // Main torso: silvery-gray ellipse
+            // Main torso: more robust fawn ellipse
             ctx.fillStyle = CO.body;
             ctx.beginPath();
-            ctx.ellipse(20, 9, 18, 6, 0, 0, Math.PI * 2);
+            ctx.ellipse(20, 9, 20, 7.5, 0, 0, Math.PI * 2);
+            ctx.fill();
+            // Black flank stripe (characteristic of Gemsbok)
+            ctx.fillStyle = CO.legBlk;
+            ctx.beginPath();
+            ctx.ellipse(20, 14, 18, 1.5, -0.05, 0, Math.PI * 2);
+            ctx.fill();
+            // Belly highlight (lighter underside, below the black stripe)
+            ctx.fillStyle = CO.bodyL;
+            ctx.beginPath();
+            ctx.ellipse(20, 15.5, 16, 2, 0, 0, Math.PI * 2);
             ctx.fill();
             // Dorsal stripe (darker top)
             ctx.fillStyle = CO.bodyS;
             ctx.beginPath();
-            ctx.ellipse(18, 6, 15, 3, 0, 0, Math.PI * 2);
+            ctx.ellipse(18, 4, 16, 2.5, 0, 0, Math.PI * 2);
             ctx.fill();
-            // Belly highlight (lighter underside)
-            ctx.fillStyle = CO.bodyL;
+            // Rear shadow / muscular hindquarter
+            ctx.fillStyle = 'rgba(0,0,0,0.15)';
             ctx.beginPath();
-            ctx.ellipse(15, 13, 11, 3, 0, 0, Math.PI * 2);
-            ctx.fill();
-            // Rear shadow
-            ctx.fillStyle = 'rgba(0,0,0,0.12)';
-            ctx.beginPath();
-            ctx.ellipse(4, 11, 4, 5, 0.3, 0, Math.PI * 2);
+            ctx.ellipse(4, 10, 5, 6, 0.3, 0, Math.PI * 2);
             ctx.fill();
 
             // ── FRONT LEGS (drawn after body — in front) ──────────────
@@ -438,47 +480,45 @@ const GemsbokRider = () => {
             ctx.stroke();
 
             // ── HORNS — iconic very long, straight, backward-sweeping ─
-            ctx.lineCap = 'round';
             if (isCharging) {
                 // Charge: horns level forward (right in canvas)
-                ctx.strokeStyle = CO.hornD;
-                ctx.lineWidth = 2.5;
+                ctx.fillStyle = CO.hornD;
                 ctx.beginPath();
-                ctx.moveTo(4, -5);
-                ctx.lineTo(40, -5);
-                ctx.stroke();
-                ctx.strokeStyle = CO.hornL; // light highlight along horn
-                ctx.lineWidth = 1;
+                ctx.moveTo(4, -6);
+                ctx.lineTo(4, -3);
+                ctx.lineTo(40, -4);
+                ctx.fill();
+                
                 ctx.beginPath();
-                ctx.moveTo(4, -5);
-                ctx.lineTo(40, -5);
-                ctx.stroke();
-                ctx.strokeStyle = CO.hornD; // second horn (slight splay)
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(5, -3);
-                ctx.lineTo(40, -1.5);
-                ctx.stroke();
+                ctx.moveTo(5, -4);
+                ctx.lineTo(5, -1);
+                ctx.lineTo(38, -2);
+                ctx.fill();
             } else {
                 // Normal: sweep straight back and slightly upward — near-parallel V
-                ctx.strokeStyle = CO.hornD;
-                ctx.lineWidth = 2.5;
+                // Draw as thick polygons tapering to a point for realism
+                ctx.fillStyle = CO.hornD;
                 ctx.beginPath();
-                ctx.moveTo(5, -5);
-                ctx.lineTo(-28, -32);
-                ctx.stroke();
-                ctx.strokeStyle = CO.hornL; // highlight stripe
-                ctx.lineWidth = 1;
+                ctx.moveTo(2, -4); // Base bottom
+                ctx.lineTo(7, -5); // Base top
+                ctx.lineTo(-26, -34); // Tip
+                ctx.fill();
+                
+                // Highlight line for texture
+                ctx.strokeStyle = CO.hornL;
+                ctx.lineWidth = 0.5;
                 ctx.beginPath();
-                ctx.moveTo(5.5, -5);
-                ctx.lineTo(-27, -31);
+                ctx.moveTo(4.5, -4.5);
+                ctx.lineTo(-24, -33);
                 ctx.stroke();
-                ctx.strokeStyle = CO.hornD; // second horn (slight outward splay)
-                ctx.lineWidth = 2;
+
+                // Second horn (slightly offset)
+                ctx.fillStyle = CO.hornD;
                 ctx.beginPath();
-                ctx.moveTo(6, -4);
-                ctx.lineTo(-25, -32);
-                ctx.stroke();
+                ctx.moveTo(3, -3); // Base bottom
+                ctx.lineTo(8, -4); // Base top
+                ctx.lineTo(-22, -33); // Tip
+                ctx.fill();
             }
 
             ctx.restore(); // end head + horns block
