@@ -75,5 +75,17 @@ func GetProjects() []models.Project {
 			Featured:    true,
 			Year:        2024,
 		},
+		{
+			ID:          6,
+			Title:       "Zoo Tycoon 2 Mod Optimizer & Conflict Resolver",
+			Description: "An automated PowerShell toolset to analyze, repair, merge, and optimize game modifications for Zoo Tycoon 2.",
+			LongDesc:    "Developed a suite of automation scripts designed to manage, repair, and optimize heavily modded instances of the classic simulation game, Zoo Tycoon 2. By reverse-engineering the game's .z2f archive structure, the toolset parses internal XML configurations to resolve entity conflicts, identify missing dependencies, and safely consolidate hundreds of individual mods. The final Mega Pack compiler drastically reduces system I/O operations, significantly accelerating game startup times and improving overall engine stability.",
+			TechStack:   []string{"PowerShell", "XML", "Batch Scripting", "Regex", ".NET"},
+			GithubURL:   "",
+			DemoURL:     "",
+			ImageURL:    "/zootycoon-cover.png",
+			Featured:    true,
+			Year:        2024,
+		},
 	}
 }
