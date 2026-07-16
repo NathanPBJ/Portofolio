@@ -249,67 +249,87 @@ const RhinoRun = () => {
             ctx.translate(p.x, p.y);
             ctx.scale(1.5, 1.5);
             
-            // Animation for galloping legs
-            const runOffset = (p.grounded && !gameOver) ? Math.sin(state.frames * 0.4) * 4 : 0;
+            // Animation for galloping legs (smooth swinging)
+            const runA = (p.grounded && !gameOver) ? Math.sin(state.frames * 0.4) * 4 : 0;
+            const runB = (p.grounded && !gameOver) ? Math.cos(state.frames * 0.4) * 4 : 0;
             
             ctx.fillStyle = '#eeeeee';
 
-            // Rhino Body (Blocky/Chunky)
+            // Draw Legs first (far side)
+            // Back far leg
             ctx.beginPath();
-            ctx.moveTo(-2, 4);
-            ctx.lineTo(24, 4); // top back
-            ctx.lineTo(28, 8); // slope down to neck
-            ctx.lineTo(28, 16); // front chest
-            ctx.lineTo(-2, 16); // bottom belly
-            ctx.closePath();
+            ctx.ellipse(6 + runB, 20, 2.5, 7, runB * 0.1, 0, Math.PI * 2);
+            ctx.fill();
+            // Front far leg
+            ctx.beginPath();
+            ctx.ellipse(22 - runA, 20, 2.5, 7, -runA * 0.1, 0, Math.PI * 2);
             ctx.fill();
 
-            // Head (Blocky)
+            // Main Rhino Body (Organic curved silhouette)
             ctx.beginPath();
-            ctx.moveTo(26, 8);
-            ctx.lineTo(36, 10); // top snout
-            ctx.lineTo(36, 15); // front snout
-            ctx.lineTo(26, 15); // bottom jaw
-            ctx.closePath();
+            ctx.moveTo(3, 14); 
+            ctx.bezierCurveTo(2, 6, 8, 3, 15, 4); // Rear hump
+            ctx.bezierCurveTo(22, 5, 26, 7, 28, 9); // Back sloping down to neck
+            ctx.bezierCurveTo(32, 9, 36, 11, 35, 15); // Head and snout
+            ctx.bezierCurveTo(33, 18, 25, 18, 20, 16); // Lower jaw and chest
+            ctx.bezierCurveTo(15, 18, 8, 17, 3, 14); // Belly
             ctx.fill();
 
-            // Eye (dark hole)
-            ctx.fillStyle = '#1e1e1e';
-            ctx.fillRect(30, 11, 2, 2);
-            ctx.fillStyle = '#eeeeee';
+            // Ear
+            ctx.beginPath();
+            ctx.moveTo(27, 9);
+            ctx.lineTo(25, 4);
+            ctx.lineTo(29, 8);
+            ctx.fill();
 
             // Horns
             if (isCharging) {
-                // Pointing forward
+                // Pointing forward (leveling horn for charge)
                 ctx.beginPath();
-                ctx.moveTo(36, 14);
-                ctx.lineTo(48, 14); // Primary horn
-                ctx.lineTo(36, 12);
+                ctx.moveTo(34, 13);
+                ctx.lineTo(44, 13); // Primary horn
+                ctx.lineTo(33, 11);
                 ctx.fill();
             } else {
-                // Pointing Up/forward
+                // Natural sweeping horn curve
                 ctx.beginPath();
-                ctx.moveTo(34, 10);
-                ctx.lineTo(38, 2); // Primary horn
-                ctx.lineTo(36, 10);
+                ctx.moveTo(34, 12);
+                ctx.quadraticCurveTo(36, 6, 39, 2); // Primary horn curve
+                ctx.quadraticCurveTo(37, 8, 33, 10);
                 ctx.fill();
                 
                 // Secondary smaller horn
                 ctx.beginPath();
-                ctx.moveTo(30, 9);
+                ctx.moveTo(31, 10);
                 ctx.lineTo(32, 5);
-                ctx.lineTo(32, 9);
+                ctx.lineTo(29, 9);
                 ctx.fill();
             }
 
-            // Legs (Thick and stocky)
-            // Back Leg 1
-            ctx.fillRect(4 + runOffset/2, 15, 6, 12 + runOffset);
-            // Front Leg 1
-            ctx.fillRect(20 - runOffset/2, 15, 6, 12 - runOffset);
+            // Eye (dark hole)
+            ctx.fillStyle = '#1e1e1e';
+            ctx.beginPath();
+            ctx.arc(31, 11, 1.2, 0, Math.PI*2);
+            ctx.fill();
+            ctx.fillStyle = '#eeeeee';
 
-            // Small tail
-            ctx.fillRect(-6, 6, 4, 2);
+            // Near Legs (drawn over body)
+            // Back near leg
+            ctx.beginPath();
+            ctx.ellipse(6 + runA, 20, 3, 7, runA * 0.1, 0, Math.PI * 2);
+            ctx.fill();
+            // Front near leg
+            ctx.beginPath();
+            ctx.ellipse(22 - runB, 20, 3, 7, -runB * 0.1, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Small tail with tuft
+            ctx.beginPath();
+            ctx.moveTo(3, 8);
+            ctx.quadraticCurveTo(-2, 10, -4, 14);
+            ctx.lineWidth = 1.5;
+            ctx.strokeStyle = '#eeeeee';
+            ctx.stroke();
 
             ctx.restore();
 
