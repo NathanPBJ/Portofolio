@@ -24,13 +24,14 @@ const SpotifyWidget = () => {
                 const response = await fetch('/api/spotify');
                 const data = await response.json();
                 
-                if (data.is_playing || data.recently_played) {
+                if (data.item) {
                     setSongData({
                         title: data.item.name,
                         artist: data.item.artists.map(a => a.name).join(', '),
                         albumArt: data.item.album.images[0]?.url,
                         url: data.item.external_urls.spotify,
                         isPlaying: data.is_playing,
+                        isPaused: !data.is_playing && !data.recently_played,
                         timeAgo: data.recently_played ? getTimeAgo(data.played_at) : null
                     });
                 } else {
@@ -81,7 +82,7 @@ const SpotifyWidget = () => {
             <div className="spotify-info">
                 <p className="spotify-label" style={{ color: songData.isPlaying ? '#1DB954' : 'var(--color-text-secondary)' }}>
                     <SlSocialSpotify style={{ color: songData.isPlaying ? '#1DB954' : 'var(--color-text-secondary)', marginRight: '5px', verticalAlign: 'middle', fontSize: '0.9em' }} />
-                    {songData.isPlaying ? 'Currently Playing' : `Played ${songData.timeAgo}`}
+                    {songData.isPlaying ? 'Currently Playing' : (songData.isPaused ? 'Paused' : `Played ${songData.timeAgo}`)}
                 </p>
                 <h4 className="song-title" style={{ color: songData.isPlaying ? 'inherit' : 'var(--color-text-secondary)' }}>{songData.title}</h4>
                 <p className="song-artist">{songData.artist}</p>
