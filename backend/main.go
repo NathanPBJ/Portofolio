@@ -7,9 +7,14 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	// Try loading from multiple possible .env locations, ignore errors if not found
+	_ = godotenv.Load("../frontend/.env.local")
+	_ = godotenv.Load(".env")
+
 	router := gin.Default()
 
 	config := cors.Config{
@@ -40,4 +45,5 @@ func registerAPIRoutes(api *gin.RouterGroup) {
 	api.GET("/profile", handlers.GetProfile)
 	api.GET("/projects", handlers.GetProjects)
 	api.GET("/projects/:id", handlers.GetProjectByID)
+	api.GET("/spotify", handlers.GetSpotifyStatus)
 }

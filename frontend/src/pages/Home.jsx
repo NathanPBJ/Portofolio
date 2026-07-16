@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import ProjectCard from '../components/ProjectCard';
 import Typewriter from '../components/Typewriter';
+import SpotifyWidget from '../components/SpotifyWidget';
+import GemsbokRider from '../components/GemsbokRider';
 import { SiGo, SiReact, SiVite, SiJavascript, SiHtml5, SiMysql, SiPython, SiC, SiCplusplus, SiUnity, SiAndroidstudio } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import './Home.css';
@@ -135,19 +137,14 @@ const Home = () => {
                 )}
             </section>
 
-            <section className="stats-section section container">
-                <div className="stats-grid">
-                    <div className="stat-item">
-                        <h3 className="stat-number">12+</h3>
-                        <p className="stat-label">Tech Stacks Learned</p>
+            {/* Interactive Dashboard Section */}
+            <section className="dashboard-section container">
+                <div className="dashboard-grid">
+                    <div className="dashboard-card spotify-card">
+                        <SpotifyWidget />
                     </div>
-                    <div className="stat-item">
-                        <h3 className="stat-number">5+</h3>
-                        <p className="stat-label">Projects Built</p>
-                    </div>
-                    <div className="stat-item">
-                        <h3 className="stat-number">100%</h3>
-                        <p className="stat-label">Eager to Learn</p>
+                    <div className="dashboard-card game-card">
+                        <GemsbokRider />
                     </div>
                 </div>
             </section>

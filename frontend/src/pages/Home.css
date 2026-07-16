@@ -225,24 +225,17 @@
     gap: 32px;
 }
 
-.stats-grid {
+.dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 48px;
-    text-align: center;
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--color-border);
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0;
 }
 
-.stat-number {
-    font-size: 3rem;
-    margin-bottom: 8px;
-    font-family: var(--font-heading);
-}
-
-.stat-label {
-    color: var(--color-text-secondary);
-    font-size: 1.1rem;
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {
