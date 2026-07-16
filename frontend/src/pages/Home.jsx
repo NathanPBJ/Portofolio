@@ -69,7 +69,7 @@ const Home = () => {
                 </div>
                 <div className="hero-image-wrapper animate-floating">
                     <div className="hero-image-border">
-                        <div className="hero-image-placeholder"></div>
+                        <img src="/profile.png" alt="Profile" className="hero-image-placeholder" style={{ objectFit: 'cover' }} />
                     </div>
                 </div>
             </section>
