@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SiSpotify } from 'react-icons/si';
 import './SpotifyWidget.css';
 
 const SpotifyWidget = () => {
@@ -40,7 +41,9 @@ const SpotifyWidget = () => {
     if (!songData) {
         return (
             <div className="spotify-widget not-playing">
-                <div className="spotify-icon">🎵</div>
+                <div className="spotify-icon">
+                    <SiSpotify style={{ color: '#1DB954', fontSize: '2rem' }} />
+                </div>
                 <div className="spotify-info">
                     <p className="spotify-label">Spotify</p>
                     <h4 className="song-title">Not currently playing</h4>
@@ -60,7 +63,10 @@ const SpotifyWidget = () => {
                 </div>
             </div>
             <div className="spotify-info">
-                <p className="spotify-label">Currently Playing</p>
+                <p className="spotify-label">
+                    <SiSpotify style={{ color: '#1DB954', marginRight: '5px', verticalAlign: 'middle', fontSize: '0.9em' }} />
+                    Currently Playing
+                </p>
                 <h4 className="song-title">{songData.title}</h4>
                 <p className="song-artist">{songData.artist}</p>
             </div>
