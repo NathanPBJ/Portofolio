@@ -87,5 +87,17 @@ func GetProjects() []models.Project {
 			Featured:    true,
 			Year:        2024,
 		},
+		{
+			ID:          7,
+			Title:       "Living Globe",
+			Description: "A cinematic atlas of Earth's native wildlife.",
+			LongDesc:    "Living Globe is a light-cinematic, desktop-first, realistic 3D Earth wildlife atlas. Users can select any country on a 3D globe and explore exactly 100 featured native wild animal taxa, complete with source-based summaries, citations, and conservation statuses. Built as a monorepo, it seamlessly connects a premium frontend experience with a rigorous backend data ingestion pipeline that strictly guarantees scientific accuracy and verified real photography.",
+			TechStack:   []string{"Next.js", "React 19", "Tailwind CSS", "Framer Motion", "Zustand", "React Query", "Supabase", "Node.js", "PNPM", "TypeScript", "OpenAPI"},
+			GithubURL:   "https://github.com/NathanPBJ/living-globe",
+			DemoURL:     "",
+			ImageURL:    "/livingglobe-cover.png",
+			Featured:    true,
+			Year:        2026,
+		},
 	}
 }
