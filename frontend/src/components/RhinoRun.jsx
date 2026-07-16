@@ -247,58 +247,58 @@ const RhinoRun = () => {
             
             ctx.save();
             ctx.translate(p.x, p.y);
+            ctx.scale(1.5, 1.5);
             
             // Animation for galloping legs
             const runOffset = (p.grounded && !gameOver) ? Math.sin(state.frames * 0.4) * 4 : 0;
             
             ctx.fillStyle = '#eeeeee';
 
-            // Rhino Body
+            // Rhino Body (Blocky/Chunky)
             ctx.beginPath();
-            ctx.ellipse(15, 10, 16, 10, 0, 0, Math.PI * 2); // Main Torso
+            ctx.moveTo(-2, 4);
+            ctx.lineTo(24, 4); // top back
+            ctx.lineTo(28, 8); // slope down to neck
+            ctx.lineTo(28, 16); // front chest
+            ctx.lineTo(-2, 16); // bottom belly
+            ctx.closePath();
             ctx.fill();
 
-            // Head (Lowered slightly)
+            // Head (Blocky)
             ctx.beginPath();
-            ctx.ellipse(32, 12, 9, 7, 0.2, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Neck connecting body and head
-            ctx.beginPath();
-            ctx.moveTo(25, 4);
-            ctx.lineTo(35, 7);
-            ctx.lineTo(28, 17);
-            ctx.lineTo(15, 15);
+            ctx.moveTo(26, 8);
+            ctx.lineTo(36, 10); // top snout
+            ctx.lineTo(36, 15); // front snout
+            ctx.lineTo(26, 15); // bottom jaw
+            ctx.closePath();
             ctx.fill();
 
             // Eye (dark hole)
             ctx.fillStyle = '#1e1e1e';
-            ctx.beginPath();
-            ctx.arc(34, 10, 1.5, 0, Math.PI*2);
-            ctx.fill();
+            ctx.fillRect(30, 11, 2, 2);
             ctx.fillStyle = '#eeeeee';
 
             // Horns
             if (isCharging) {
                 // Pointing forward
                 ctx.beginPath();
-                ctx.moveTo(38, 14);
+                ctx.moveTo(36, 14);
                 ctx.lineTo(48, 14); // Primary horn
-                ctx.lineTo(36, 10);
+                ctx.lineTo(36, 12);
                 ctx.fill();
             } else {
                 // Pointing Up/forward
                 ctx.beginPath();
-                ctx.moveTo(38, 14);
-                ctx.lineTo(43, 2); // Primary horn
+                ctx.moveTo(34, 10);
+                ctx.lineTo(38, 2); // Primary horn
                 ctx.lineTo(36, 10);
                 ctx.fill();
                 
                 // Secondary smaller horn
                 ctx.beginPath();
-                ctx.moveTo(32, 8);
-                ctx.lineTo(34, 3);
-                ctx.lineTo(30, 6);
+                ctx.moveTo(30, 9);
+                ctx.lineTo(32, 5);
+                ctx.lineTo(32, 9);
                 ctx.fill();
             }
 
@@ -309,11 +309,7 @@ const RhinoRun = () => {
             ctx.fillRect(20 - runOffset/2, 15, 6, 12 - runOffset);
 
             // Small tail
-            ctx.beginPath();
-            ctx.moveTo(1, 8);
-            ctx.lineTo(-4, 12);
-            ctx.lineTo(-2, 14);
-            ctx.fill();
+            ctx.fillRect(-6, 6, 4, 2);
 
             ctx.restore();
 
