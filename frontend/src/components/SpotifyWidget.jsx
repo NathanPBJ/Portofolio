@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SiSpotify } from 'react-icons/si';
+import { SlSocialSpotify } from 'react-icons/sl';
 import './SpotifyWidget.css';
 
 const SpotifyWidget = () => {
@@ -42,7 +42,7 @@ const SpotifyWidget = () => {
         return (
             <div className="spotify-widget not-playing">
                 <div className="spotify-icon">
-                    <SiSpotify style={{ color: '#1DB954', fontSize: '2rem' }} />
+                    <SlSocialSpotify style={{ color: 'var(--color-text-secondary)', fontSize: '2rem', strokeWidth: '1' }} />
                 </div>
                 <div className="spotify-info">
                     <p className="spotify-label">Spotify</p>
@@ -64,7 +64,7 @@ const SpotifyWidget = () => {
             </div>
             <div className="spotify-info">
                 <p className="spotify-label">
-                    <SiSpotify style={{ color: '#1DB954', marginRight: '5px', verticalAlign: 'middle', fontSize: '0.9em' }} />
+                    <SlSocialSpotify style={{ color: '#1DB954', marginRight: '5px', verticalAlign: 'middle', fontSize: '0.9em' }} />
                     Currently Playing
                 </p>
                 <h4 className="song-title">{songData.title}</h4>
