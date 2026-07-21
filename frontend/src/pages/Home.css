@@ -23,33 +23,7 @@
     max-width: 700px;
 }
 
-.availability-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    background: rgba(74, 222, 128, 0.1);
-    color: var(--color-success);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-}
 
-.dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-success);
-    border-radius: 50%;
-    animation: blink 2s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.4; }
-    100% { opacity: 1; }
-}
 
 .hero-title {
     font-size: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -297,13 +271,6 @@
 @media (max-width: 640px) {
     .hero {
         gap: 24px;
-    }
-
-    .availability-badge {
-        max-width: 100%;
-        justify-content: center;
-        padding: 6px 12px;
-        font-size: 0.78rem;
     }
 
     .hero-title {

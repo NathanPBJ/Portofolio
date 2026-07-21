@@ -77,10 +77,6 @@ const Home = () => {
         <main className="home">
             <section className="hero container">
                 <div className="hero-content">
-                    <div className="availability-badge">
-                        <span className="dot"></span>
-                        Open for Internship / Collaboration
-                    </div>
                     <h1 className="hero-title">
                         Hello, I'm <br />
                         <span className="text-gradient">
