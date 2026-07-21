@@ -91,7 +91,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-bottom: 40px;
 }
 
 .contact-method-link {
@@ -123,16 +122,7 @@
     color: var(--color-accent);
 }
 
-.availability-banner {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    background: rgba(16, 185, 129, 0.1);
-    border-radius: var(--border-radius-sm);
-    color: var(--color-success);
-    font-weight: 500;
-}
+
 
 .pitch-container {
     padding: 40px;
@@ -259,11 +249,7 @@
         transform: none;
     }
 
-    .availability-banner {
-        align-items: flex-start;
-        padding: 14px;
-        font-size: 0.92rem;
-    }
+
 
     .pitch-container {
         gap: 24px;

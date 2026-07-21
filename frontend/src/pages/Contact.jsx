@@ -50,11 +50,6 @@ const Contact = () => {
                                 <span>GitHub</span>
                             </a>
                         </div>
-
-                        <div className="availability-banner">
-                            <span className="dot"></span>
-                            <span>Actively seeking Internship opportunities</span>
-                        </div>
                     </div>
                 </div>
 
