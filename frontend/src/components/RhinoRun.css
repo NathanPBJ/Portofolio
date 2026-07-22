@@ -87,3 +87,18 @@
     font-size: 0.9rem;
     animation: pulse 1.5s infinite;
 }
+
+@media (max-width: 640px) {
+    .game-controls {
+        display: none;
+    }
+    
+    .game-header {
+        justify-content: center;
+    }
+    
+    .game-score {
+        font-size: 1.1rem;
+        gap: 20px;
+    }
+}

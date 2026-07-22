@@ -53,16 +53,16 @@
     height: 16px;
 }
 
-.bar {
+.playing-bars .bar {
     width: 4px;
     background: #1db954;
     border-radius: 2px;
     animation: bounce 1s infinite ease-in-out alternate;
 }
 
-.bar1 { height: 100%; animation-delay: 0s; }
-.bar2 { height: 60%; animation-delay: 0.3s; }
-.bar3 { height: 80%; animation-delay: 0.6s; }
+.playing-bars .bar1 { height: 100%; animation-delay: 0s; }
+.playing-bars .bar2 { height: 60%; animation-delay: 0.3s; }
+.playing-bars .bar3 { height: 80%; animation-delay: 0.6s; }
 
 @keyframes bounce {
     0% { height: 20%; }

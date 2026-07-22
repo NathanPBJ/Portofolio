@@ -75,7 +75,7 @@
     z-index: 1001;
 }
 
-.bar {
+.hamburger .bar {
     width: 24px;
     height: 2px;
     background: var(--color-text-primary);
@@ -132,15 +132,15 @@
         padding: 8px 20px;
     }
 
-    .bar.open:nth-child(1) {
+    .hamburger .bar.open:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
     
-    .bar.open:nth-child(2) {
+    .hamburger .bar.open:nth-child(2) {
         opacity: 0;
     }
     
-    .bar.open:nth-child(3) {
+    .hamburger .bar.open:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 }

@@ -76,6 +76,7 @@
         flex-direction: column;
         text-align: center;
         gap: 22px;
+        padding-bottom: 32px;
     }
 
     .footer-tagline {
