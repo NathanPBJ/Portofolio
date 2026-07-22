@@ -60,7 +60,20 @@ const RhinoRun = () => {
             }
         };
 
+        const handleTouch = (e) => {
+            e.preventDefault();
+            if (state.player.grounded) {
+                state.player.dy = state.player.jumpForce;
+                state.player.grounded = false;
+            } else if (gameOver) {
+                resetGame();
+            }
+        };
+
         window.addEventListener('keydown', handleKeyDown);
+        if (canvas) {
+            canvas.addEventListener('touchstart', handleTouch, { passive: false });
+        }
 
         const spawnObstacle = () => {
             // Types: 0 = rock (must jump), 1 = bug/box (can be destroyed with charge)
@@ -347,7 +360,7 @@ const RhinoRun = () => {
                 ctx.textAlign = 'center';
                 ctx.fillText('Game Over!', canvas.width / 2, canvas.height / 2 - 10);
                 ctx.font = '14px "Inter", sans-serif';
-                ctx.fillText('Press SPACE to Restart', canvas.width / 2, canvas.height / 2 + 20);
+                ctx.fillText('Press SPACE or Tap to Restart', canvas.width / 2, canvas.height / 2 + 20);
             }
         };
 
@@ -363,6 +376,9 @@ const RhinoRun = () => {
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
+            if (canvas) {
+                canvas.removeEventListener('touchstart', handleTouch);
+            }
             cancelAnimationFrame(animationFrameId);
         };
     }, [isPlaying, gameOver, highScore]);
