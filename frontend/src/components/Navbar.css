@@ -101,10 +101,12 @@
 
     .hamburger {
         display: flex;
+        flex-direction: column;
         min-width: 44px;
         min-height: 44px;
         justify-content: center;
         align-items: center;
+        z-index: 1002;
     }
 
     .nav-links {

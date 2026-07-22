@@ -215,9 +215,19 @@
         gap: 22px;
     }
 
-    .contact-card,
     .pitch-container {
         padding: 24px 20px;
+    }
+
+    .contact-card {
+        padding: 44px 20px 24px;
+    }
+
+    .contact-card:hover .easter-egg-btn,
+    .contact-card:active .easter-egg-btn,
+    .contact-card .easter-egg-btn:active {
+        top: 10px;
+        right: 10px;
     }
 
     .contact-card h3,
